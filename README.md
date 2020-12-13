@@ -13,7 +13,7 @@ Instructions for Mac:
 2. Run “python3 -m venv project_env” in your terminal.  
 3. Run  “source project_env/bin/activate”  
 
-Navigate to the src directory of the CharityCompass project:  
+Navigate to the CharityCompass directory:  
 4. Run “pip install -r requirements.txt”  
 5. Run "cd src"  
 6. Run “python manage.py runserver”  
@@ -28,7 +28,7 @@ In your Command Prompt:
 3. Run “python -m venv project_env” in your terminal.  
 4. Run  “project_env\scripts\activate.bat”  
 
-Navigate to CharityCompass directory:  
+Navigate to the CharityCompass directory:  
 5. Run “pip install -r requirements.txt”  
 6. Run "cd src"  
 7. Run “python manage.py runserver”  
