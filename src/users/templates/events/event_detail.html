@@ -1,0 +1,115 @@
+{% extends "base/base.html" %} {% block content %}
+<div class="event-page">
+	<article class="media content-section">
+		<div>
+			<div class="article-metadata">
+				<img
+					class="rounded-circle event-img"
+					src="{{event.user.usersettings.image.url}}"
+				/>
+				{% if user.is_volunteer %}
+				<a
+					class="mr-2 event-owner"
+					style="font-size: 24px; font-weight: bold"
+					href="{% url 'charities:charity_page' slug=event.owner.slug %}"
+					>{{ event.owner.charity_name }}</a
+				>
+				{% else %}
+				<a
+					class="mr-2 event-owner"
+					style="font-size: 24px; font-weight: bold"
+					href="{% url 'charities:charity_dashboard' %}"
+					>{{ event.owner.charity_name }}</a
+				>
+				{% endif %} {% if event.user == user %}
+
+				<div>
+					<a
+						class="btn btn-secondary btn-sm mt-1 mb-1"
+						href="{% url 'charities:event_update' event.id %}"
+						>Update</a
+					>
+					<a
+						class="btn btn-danger btn-sm mt-1 mb-1"
+						href="{% url 'charities:event_delete' event.id %}"
+						>Delete</a
+					>
+				</div>
+				{% endif %}
+			</div>
+			<h3 class="article-title">{{event.charity_name}}</h3>
+			<div>
+				<h3 style="float: left" class="article-content">{{ event.title }}</h3>
+				{% if user.is_volunteer %}
+				<div class="interest-section">
+					{% if is_registered %}
+					<br />
+					{% else %} {% if is_interested %}
+
+					<a href="{% url 'volunteers:interest_event' pk=event.pk %}">
+						<i
+							class="fas fa-star fa-lg"
+							style="margin: 0.6% 0% 0% 0.3%; color: #4e99a4"
+						></i>
+					</a>
+					{% else %}
+
+					<a href="{% url 'volunteers:interest_event' pk=event.pk %}">
+						<i
+							class="far fa-star fa-lg"
+							style="margin: 0.6% 0% 0% 0.3%; color: #4e99a4"
+						></i>
+					</a>
+
+					{% endif %} {% endif %}
+				</div>
+
+				{% endif %}
+			</div>
+			<br />
+			<p>
+				<i class="fas fa-check-circle" style="color: #4e99a4"></i>
+				<b style="font-weight: 500"
+					>{{ event.registered.count }} Registered for this Event</b
+				>
+				<br />
+				<i class="fas fa-star" style="color: #4e99a4"></i>
+				<b style="font-weight: 500"
+					>{{ event.interested.count }} Interested in this Event</b
+				>
+				<br />
+				{{ event.event_type }}
+				<br />
+				{{ event.event_date }} from {{event.start_time}} - {{event.end_time}}
+				<br />{{ event.location }}
+				<br />
+				{{ event.description }}
+			</p>
+			{% if user.is_volunteer %}
+			<div id="register-section">
+				{% if is_registered %}
+
+				<a
+					class="register-event standard-link-btn"
+					style="background-color: #c4585c"
+					href="{% url 'volunteers:register_event' pk=event.pk %}"
+				>
+					Unregister
+				</a>
+
+				{% else %}
+
+				<a
+					class="register-event standard-link-btn"
+					href="{% url 'volunteers:register_event' pk=event.pk %}"
+				>
+					Register!
+				</a>
+
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+	</article>
+</div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends "base/base.html" %} {% block content %}
+<div class="dashboard">
+	<div class="dashboard-welcome">
+		<img class="article-img" src="{{user.usersettings.image.url}}" />
+		<br />
+		<h4 class="dashboard-heading">{{ charity.charity_name }}</h4>
+		<div class="charity-feed">
+			<h6>@{{ user.username }}</h6>
+			<div>
+				<i class="fas fa-envelope-open-text newsletter"></i>
+				<a class="newsletter" href="{% url 'charities:send_newsletter' %}">Newsletter</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="dashboard-links" style="float: right">
+		<a class="dashboard-link" href="{% url 'charities:event_add' %}">Create Event +</a>
+	</div>
+
+	<br /><br /><br /><br />
+	<div class="dashboard-content">
+
+
+		<div class="event-feed charity-event-feed">
+			<h1>Your Events</h1>
+			{% for event in events %} {%empty%}
+			<h3>You do not have any events.</h3>
+			{%endfor%} {% for event in events %}
+			<!-- for loops in html -->
+			<article class="event">
+				<div class="event-content">
+					<a class="event-owner" href="{% url 'charities:event_detail' event.pk %}">
+						<h4 class="event-owner">{{event.title}} | {{event.event_type}}</h4>
+					</a>
+					<p>
+						{{event.event_date}} from {{event.start_time}} - {{event.end_time}}
+						<br />
+						{{event.location}}
+						<br />
+						{{event.description}}
+					</p>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock content %}

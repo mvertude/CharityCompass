@@ -1,0 +1,43 @@
+{% extends "base/base.html" %} {% block content %}
+<div class="notification-section content-section">
+	<h3 style="text-align: center">Notifications</h3>
+	{% if notifications %}
+	<a
+		style="display: flex; margin: 0 auto; width: 147px !important"
+		class="standard-link-btn"
+		href="{% url 'clear_notifications' %}"
+		>Clear all notifications</a
+	>
+	{% else %}
+	<h6>You have no new notifications.</h6>
+
+	{% endif %}
+	<br />
+	{% for notification in notifications %}
+	<!-- for loops in html -->
+	<article
+		class="event"
+		style="
+			margin: 0 auto !important;
+			margin-top: 10px !important;
+			border: 1px solid #c4c4c4;
+		"
+	>
+		<div class="event-content" style="padding: 15px 0px 0px 31%">
+			<h5>
+				<img
+					class="rounded-circle notification-img"
+					src="{{notification.sender.usersettings.image.url}}"
+				/>
+				{{notification.sender.username}} {{notification.text_preview}}
+				{{notification.event_name}}
+			</h5>
+
+			<p style="margin-top: -5%; margin-left: 11.25%">
+				{{ notification.date }}
+			</p>
+		</div>
+	</article>
+	{% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="charity-page">
+	<img id="charity-page-img" src="{{charity.user.usersettings.image.url}}">
+	<div id="favourite-section"></div>
+	<br />
+
+
+<div class="charity-overview">
+	<div class="charity-overview-content">
+		<h5 class="charity-overview-title">Charity Overview</h5>
+		<p>
+		{% if charity.website.length == 0 %}
+		{% else %}
+			<a target="_blank" rel="noopener noreferrer" href="{{charity.website}}" class='signup-link'>Visit Our Website</a>
+		{% endif %}
+		<br>
+		
+		{% if charity.description.length == 0 %}
+		{% else %}
+		{{charity.description}}</p>
+		{%endif%}
+		
+		
+		
+	</div>
+</div>
+
+<div class="event-feed charity-page-events">
+	<h1 class="charity-name" style="float:left">
+		{{charity.charity_name}} {% if is_favorite %}
+
+		<a style="margin-left: 10px" href="{% url 'volunteers:favorite_charity' slug=charity.slug %}">
+			<i class="fas fa-heart fa-sm"></i>
+		</a>
+
+		{% else %}
+
+		<a style="margin-left: 10px" href="{% url 'volunteers:favorite_charity' slug=charity.slug %}">
+			<i class="far fa-heart fa-sm"></i>
+		</a>
+
+		{% endif %}
+	</h1>
+	<br><br><br>
+	{% for event in charity.user.events.all|dictsort:"event_date" %}
+	{%empty%}
+	<h3>This charity does not have any events.</h3>
+	{%endfor%}
+	
+	{% for event in charity.user.events.all %}
+	<!-- for loops in html -->
+	<article class="event">
+		<div class="event-content">
+			<a class="event-owner" href="{% url 'charities:event_detail' event.pk %}">
+				<h4 class="event-owner">{{ event.title }} | {{ event.event_type }}</h4>
+			</a>
+			<p> {{ event.event_date }} from {{ event.start_time }} - {{ event.end_time }}
+				<br>
+			Location: {{ event.location }}
+			<br>
+			Description: {{ event.description }}</p>
+			
+		</div>
+	</article>
+	{% endfor %}
+</div></div>
+</div>
+{% endblock content %}

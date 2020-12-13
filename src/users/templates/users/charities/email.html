@@ -1,0 +1,12 @@
+{% extends "base/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="email-section content-section">
+	<h2>Contact Your Volunteers</h2>
+	<br />
+	<form class="form-group" method="post">
+		{% csrf_token %} {{ form | crispy }}
+		<div class="form-actions">
+			<button class="standard-btn" type="submit">Send</button>
+		</div>
+	</form>
+</div>
+{% endblock content %}

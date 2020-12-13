@@ -1,0 +1,104 @@
+{% load static %}
+<!-- load in css file from static directory-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://kit.fontawesome.com/2ae4d1da20.js" crossorigin="anonymous"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="{% static 'base/main.css' %}" />
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet" />
+	<link rel="shortcut icon" href="../../../media/profile_pics/cropped.png"/>
+	{% if title %}
+	<!-- if/else statements -->
+	<title>Charity Compass - {{ title }}</title>
+	{% else %}
+	<title>Charity Compass</title>
+	{% endif %}
+</head>
+
+<body>
+	<!-- navigation bar from bootstrap -->
+	<header class="site-header">
+		<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+			<div class="navbar-container">
+				<div class="logo-title">
+					<a class="navbar-brand" href="/">
+						<div class="logo-image">
+							<img src="../../../media/profile_pics/charity_compass_logo.png" class="img-fluid" />
+						</div>
+					</a>
+					<a href="/" class="navbar-title navbar-brand mr-4">Charity Compass</a>
+				</div>
+				{%if user.is_volunteer%}
+				<div class="search-bar">
+					<form action="{% url 'search_results' %}" method="get">
+						<input class="search" name="q" type="text" placeholder="Search..." />
+					</form>
+					<i class="fas fa-search search-icon"></i>
+				</div>
+				{%else%} {%endif%}
+				<div class="navbar-right">
+					<div class="welcome-user">
+						<a href="/" class="welcome-user-link">
+							{% if user.is_authenticated%} {% if user.is_charity %}
+							<p>Welcome, {{user.charity.charity_name}}</p>
+							{% else %}
+							<p>Welcome, {{user.volunteer.first_name}}</p>
+							{% endif %} {% else %} {% endif %}
+						</a>
+					</div>
+
+					<div class="navbar-toggle-container">
+						<button class="navbar-toggler test" type="button" data-toggle="collapse"
+							data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="navbar-link collapse navbar-collapse" id="navbarToggle" style="float: right">
+						<!-- Navbar Right Side -->
+						<div class="navbar-nav">
+							{% if user.is_authenticated %}
+							<a class="nav-item nav-link" href="{% url 'notifications' %}">Notifications</a>
+							{% if user.is_charity %}
+							<a class="nav-item nav-link" href="{% url 'charities:charity_settings' %}">Settings</a>
+							{% else %}
+							<a class="nav-item nav-link" href="{% url 'volunteers:volunteer_settings' %}">Settings</a>
+							{% endif %}
+							<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+							{% else %}
+							<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+							<a class="nav-item nav-link" href="{% url 'volunteer_signup' %}">Register</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div>{% block content %}{% endblock %}</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

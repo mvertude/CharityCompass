@@ -1,0 +1,790 @@
+body {
+	background: #f0f2f5;
+	color: #333333;
+	margin-bottom: 6rem;
+}
+
+.margin-top {
+	margin-top: 150px;
+}
+
+.static-width {
+	width: 80%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #444444;
+}
+
+ul {
+	margin: 0;
+}
+
+.bg-steel {
+	background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+	color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+	color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+	font-weight: 500;
+}
+
+.content-section {
+	background: #ffffff;
+	padding: 10px 20px;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+.article-title {
+	color: #444444;
+}
+
+a.article-title:hover {
+	color: #428bca;
+	text-decoration: none;
+}
+
+.article-content {
+	white-space: pre-line;
+}
+
+.article-img {
+	resize: both;
+	max-width: 90%;
+	height: fit-content;
+	border-radius: 60%;
+	margin-left: 7%;
+}
+
+.article-metadata {
+	padding-bottom: 1px;
+	margin-bottom: 4px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+.article-svg {
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+}
+
+.account-img {
+	height: 125px;
+	width: 125px;
+	margin-right: 20px;
+	margin-bottom: 16px;
+}
+
+.account-heading {
+	font-size: x-large;
+}
+
+/* Navbar */
+.search-bar {
+	display: inline-flex;
+	margin-left: 13%;
+	margin-top: 15px;
+	width: 28%;
+}
+
+.search {
+	width: 225%;
+	border-radius: 15px;
+	border: none;
+}
+
+.search:focus {
+	outline: none;
+}
+
+.search::placeholder {
+	color: #c4c4c4;
+}
+
+.search-icon {
+	padding: 1%;
+	margin-left: 47%;
+	color: #c4c4c4;
+}
+
+.navbar-container {
+	width: 100%;
+}
+
+.navbar-nav {
+	float: right;
+}
+
+.welcome-user {
+	float: left;
+	padding: 10px 10px 10px 10px;
+	color: white;
+	font-weight: bold;
+}
+
+.welcome-user-link {
+	color: white;
+}
+.welcome-user-link:hover {
+	color: #2f6870;
+	text-decoration: none;
+}
+.navbar-toggle-container {
+	float: right;
+}
+
+.navbar-right {
+	height: 15px;
+	float: right;
+	margin-top: 6px;
+}
+
+.nav-link {
+	float: right;
+	padding: 10px 10px 10px 10px;
+}
+
+.navbar {
+	background-color: #5cb2bf;
+	top: 0px;
+}
+
+.navbar-title {
+	color: white !important;
+	font-family: "Oleo Script", cursive;
+	font-size: 30px;
+}
+
+.logo-image {
+	width: 55px;
+	height: 55px;
+	margin-top: -75%;
+	float: right;
+}
+
+.logo-title {
+	float: left;
+}
+
+/* login */
+.login-section {
+	background-color: #4e99a4;
+	margin-left: auto;
+	width: 38%;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	float: right;
+	margin-top: 150px;
+}
+
+.login-title {
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	font-family: Aleo;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.landing-page {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.landing-page-message {
+	font-family: "Amatic SC", cursive;
+	font-style: normal;
+	font-weight: 603px;
+	font-size: 50px;
+	line-height: 88px;
+	color: #4e99a4;
+}
+
+.landing-page-container {
+	width: 348px;
+	height: 400px;
+	float: left;
+	margin-top: 150px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.login-btn {
+	width: 126px;
+	height: 30px;
+	color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
+	border-radius: 20px;
+	background-color: #0d3c43;
+	font-style: normal;
+	border: none;
+}
+
+/* Register */
+.register-container {
+	margin-top: 5rem;
+	margin-left: auto;
+	background-color: #4e99a4;
+	width: 500px;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.register-title {
+	font-size: 30px;
+	font-family: "Aleo";
+	font-weight: 400;
+	color: white;
+	text-align: center;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signup-btn {
+	width: 126px;
+	height: 30px;
+	color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
+	border-radius: 20px;
+	background-color: #0d3c43;
+	font-style: normal;
+	margin-left: 35%;
+	border: none;
+}
+
+.register-fields {
+	width: 75%;
+	margin: 20px auto;
+}
+
+.login-form > .form-group > .control-group > .control-label,
+.register-form > .control-group > .control-label {
+	color: white;
+	font-family: Aleo;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 34px;
+}
+
+.help-block {
+	font-size: 10px;
+}
+
+.controls > ul {
+	font-size: 12px;
+}
+
+.login-form > .form-group > .control-group > .controls > .textinput,
+.register-form > .control-group > .controls > .textinput,
+.register-form > .control-group > .controls > #id_email {
+	border-bottom: 1px solid white;
+	background-color: #4e99a4;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	width: 100%;
+}
+
+#id_email > select,
+.textinput > select,
+.textinput > textarea {
+	color: black;
+}
+
+.signup-link {
+	color: white;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.signup-link:hover {
+	color: #c4c4dd;
+	text-decoration: none;
+}
+/* user settings */
+.user-settings-content {
+	padding: 30px;
+}
+
+.user-info {
+	float: left;
+	display: flex;
+	margin-left: 7%;
+	align-items: center;
+	flex-direction: column;
+}
+
+.media-body {
+	flex: 1;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+}
+
+.update-settings {
+	color: steelblue;
+}
+
+.user-settings-section {
+	margin: 150px auto;
+}
+
+.user-settings-form {
+	margin-left: 40%;
+}
+
+.settings-img {
+	resize: both;
+	max-width: 75%;
+	height: fit-content;
+	border-radius: 60%;
+	margin-left: 12%;
+}
+
+/* Reset Password */
+.standard-btn {
+	width: 126px;
+	height: 30px;
+	color: white;
+	border-radius: 20px;
+	background-color: #0d3c43;
+	font-style: normal;
+	border: none;
+}
+
+.standard-cancel-btn {
+	padding: 3px;
+	margin-top: -5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	text-decoration: none;
+	background: #c4c4c4;
+	color: white;
+	font-size: 15px;
+	font-style: normal;
+}
+
+.standard-link-btn {
+	padding: 3px;
+	margin-top: -5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	text-decoration: none;
+	background-color: #0d3c43;
+	color: white;
+	font-size: 15px;
+	font-style: normal;
+}
+
+.standard-cancel-btn:hover {
+	padding: 3px;
+	margin-top: -5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	text-decoration: none;
+	background-color: #c4c4c4;
+	color: white;
+	font-size: 15px;
+	font-style: normal;
+}
+
+.standard-link-btn:hover {
+	padding: 3px;
+	margin-top: -5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	text-decoration: none;
+	background-color: #0d3c43;
+	color: white;
+	font-size: 15px;
+	font-style: normal;
+}
+
+.reset-password-title {
+	border-bottom: 1px solid #dee2e6 !important;
+	font-style: normal;
+	font-weight: 500;
+}
+
+.password-reset-section {
+	margin: 150px;
+	background: rgba(196, 196, 196, 0.4);
+	padding: 10px 20px;
+	border: 1px solid #c4c4c4;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+/* dashboard */
+.dashboard {
+	margin: 90px 0px 0px 10px;
+}
+
+.dashboard-welcome {
+	width: 17%;
+	float: left;
+	margin-left: 42px;
+}
+
+.dashboard-links {
+	font-size: 30px;
+	display: flex;
+	padding: 25px;
+	justify-content: center;
+}
+
+.dashboard-link:hover {
+	color: #5cb2bf;
+	text-decoration: none;
+}
+
+.dashboard-link {
+	font-weight: bold;
+	color: #999999;
+	padding: 5px 5px 5px 5px;
+	display: inline;
+}
+
+.dashboard-link-border {
+	border-right: 1px solid #999999;
+}
+
+.dashboard-heading {
+	display: flex;
+	justify-content: center;
+}
+
+/* dashboard event feed and favorite charities*/
+.dashboard-content {
+	margin: inherit;
+	width: 100%;
+}
+
+.favorite-charities-feed {
+	width: 20%;
+}
+
+.charity-feed {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.favorite-charity-link {
+	color: black;
+	padding: 2px 0px 2px 5px;
+}
+
+.favorite-charities-title {
+	color: #4e99a4;
+}
+
+.favorite-charities {
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.favorite-charities-content {
+	padding: 7px 0px 0px 5px;
+}
+
+.charity-page-events {
+	margin-top: -235px !important;
+}
+
+.charity-event-feed {
+	margin-top: -120px !important;
+}
+
+.event-feed {
+	float: right;
+	width: 75%;
+	margin-top: -280px;
+}
+
+.event {
+	width: 95%;
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 0% 0% 3% 0%;
+}
+
+.event-content {
+	padding: 15px 0px 1px 15px;
+}
+
+.event-owner {
+	color: #4e99a4;
+}
+
+.event-owner:hover {
+	text-decoration-line: none !important;
+	color: #999999;
+}
+
+.event-title {
+	font-size: 18px;
+	color: #999999;
+	margin: -1% 0 2.25% 0px;
+}
+
+.event-title:hover {
+	color: #737373;
+}
+
+.event-date {
+	margin: -20px 0px 10px 0px;
+}
+
+.newsletter {
+	font-size: 20px;
+	color: #4e99a4;
+}
+
+/* Create event */
+.create-event-section {
+	width: 90%;
+	margin: 150px auto;
+	background: #dcdcdc2e;
+}
+.btn-outline-info {
+	color: white;
+	background: #4e99a4;
+	background-image: none;
+	border-color: #17a2b8;
+	border-radius: 7px;
+}
+.border-bottom {
+	border-bottom: 1px solid #dee2e6 !important;
+	color: #1d1e1f;
+}
+/* Update event */
+.update-event-section {
+	margin: 150px auto;
+	background: white;
+	width: 80%;
+}
+.control-group {
+	font-family: math;
+}
+/*delete event */
+.delete-event-section {
+	margin-top: 250px;
+	background: #dcdcdc2e;
+}
+
+.btn-outline-secondary {
+	color: #305865;
+	background-color: #0000000a;
+	background-image: none;
+	border-color: #6c757d;
+}
+.btn-outline-danger {
+	color: #f8f9fa;
+	background-color: #dc3545;
+	background-image: none;
+	border-color: #dc3545;
+}
+/* password sent */
+.alert-info {
+	margin-top: 25%;
+	color: #0c5460;
+	background: #dbe4ec;
+	border-color: #bee5eb;
+}
+
+.password-reset-form-section {
+	margin-top: 150px;
+}
+
+a.password-sent-section {
+	margin-left: 2px;
+	border-radius: 10px;
+	text-decoration: none;
+	background: #0d3c43;
+	color: white;
+	font-size: 15px;
+	padding: 5px;
+}
+
+/* charity page */
+.charity-page {
+	margin-top: 100px;
+}
+
+.charity-overview {
+	margin-top: 0%;
+	margin-left: 2%;
+	padding: 15px 15px 0px 15px;
+	float: left;
+	background-color: #4e99a4;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	width: 20%;
+}
+
+.charity-overview-content {
+	margin: 10px auto;
+}
+
+.charity-overview-title {
+	color: white;
+	font-family: "Oleo Script", cursive;
+	display: flex;
+	justify-content: center;
+}
+
+.charity-name {
+	display: flex;
+	justify-content: center;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-weight: bold;
+}
+
+#charity-page-img {
+	resize: both;
+	height: fit-content;
+	border-radius: 60%;
+	margin-left: 4.75%;
+	max-width: 12%;
+	margin-left: 6%;
+}
+
+/* event page */
+.event-page {
+	width: 80%;
+	margin: 150px auto;
+}
+
+.event-img {
+	width: 50px;
+	height: 50px;
+}
+
+.register-event {
+	margin-left: 2px;
+	border-radius: 10px;
+	text-decoration: none;
+	background: #0d3c43;
+	color: white;
+	font-size: 15px;
+	padding: 5px;
+}
+
+/* update interests section */
+.update-interests-section {
+	margin: 150px auto;
+}
+
+.update-interests-content {
+	height: 47.5vh;
+	padding: 30px;
+}
+
+#interests-img {
+	resize: both;
+	max-width: 75%;
+	height: fit-content;
+	border-radius: 60%;
+	margin-left: 11%;
+}
+
+/* volunteer now */
+.volunteer-now-section {
+	width: 80%;
+	margin: 150px auto;
+}
+
+/* notification page */
+.notification-section {
+	margin: 150px auto;
+	width: 80%;
+}
+
+/* Setting password */
+.setting-password-section {
+	margin: 150px;
+	background: white;
+}
+
+/* search results */
+.search-results-section {
+	margin: 150px auto;
+	width: 80%;
+	background-color: white;
+	padding: 15px;
+}
+
+.search-result-title {
+	margin-left: 40px;
+}
+
+.result-description {
+	width: 78%;
+	float: right;
+}
+
+.description {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* notification */
+
+.center-text {
+	text-align: center;
+}
+
+.notification-img {
+	width: 80px;
+	height: 80px;
+}
+
+.charity-email {
+	margin-left: 9%;
+	margin-top: -27px;
+	color: #999999;
+}
+
+.no-underline {
+	text-decoration: none !important;
+}
+
+.email-section {
+	margin: 150px auto;
+	width: 80%;
+}
+
+.volunteer-event-feed {
+	margin-top: -275px !important;
+}
+
+.update-interests-content {
+    height: 446px;
+    padding: 30px;
+}

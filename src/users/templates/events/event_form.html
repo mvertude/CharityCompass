@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="update-event-section content-section">
+	<form method="POST">
+		{% csrf_token %}
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4">Update your event!</legend>
+			{{form|crispy}}
+			<!-- renders form in paragraph text-->
+		</fieldset>
+		<div class="form-group">
+			<button class="standard-btn" type="submit">Update Event</button>
+			<a href="{% url 'charities:charity_dashboard' %}">Cancel</a>
+		</div>
+	</form>
+</div>
+{% endblock content %}

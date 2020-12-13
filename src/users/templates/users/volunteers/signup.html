@@ -1,0 +1,26 @@
+{% extends "base/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="landing-page">
+	<div class="landing-page-container">
+		<p class="landing-page-message">
+			A place where volunteers and charities can come together.
+		</p>
+	</div>
+	<div class="row">
+		<div class="register-container">
+			<div class="register-fields">
+				<h2 class="register-title">Sign up as a {{ user_type }}</h2>
+				<a class="signup-link" href="{% url 'charity_signup' %}"
+					>Sign up as a charity</a
+				>
+				<form class="register-form" method="post" novalidate>
+					{% csrf_token %}
+					<input type="hidden" name="next" value="{{ next }}" />
+					{{ form|crispy }}
+
+					<button type="submit" class="signup-btn">Sign up</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
